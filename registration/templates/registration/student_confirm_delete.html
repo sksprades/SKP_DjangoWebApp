@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Student</title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<nav class="topnav">
+    <span class="brand">SKP_DjangoWebApp</span>
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'dynamic_form' %}">Dynamic Form</a>
+    <a href="{% url 'student_list' %}">Student Registration</a>
+</nav>
+
+<div class="container">
+    <h1>Delete Student</h1>
+    <p>Are you sure you want to delete <strong>{{ student.student_name }}</strong>?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-danger">Yes, Delete</button>
+        <a class="btn btn-secondary" href="{% url 'student_list' %}">Cancel</a>
+    </form>
+</div>
+
+</body>
+</html>

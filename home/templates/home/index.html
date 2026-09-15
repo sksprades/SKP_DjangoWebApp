@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKP DjangoWebApp</title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<nav class="topnav">
+    <span class="brand">SKP_DjangoWebApp</span>
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'dynamic_form' %}">Dynamic Form</a>
+    <a href="{% url 'student_list' %}">Student Registration</a>
+</nav>
+
+<div class="container">
+    <h1>C-PEITEL2B &mdash; Continuous Django Project</h1>
+    <p class="subtitle">Dynamic Web Applications and Development Tools</p>
+
+    <div class="card-grid">
+        <a class="card" href="{% url 'dynamic_form' %}">
+            <h3>Module 02 &middot; Dynamic Forms</h3>
+            <p>Submit student information and see a dynamic, server-generated response.</p>
+        </a>
+        <a class="card" href="{% url 'student_list' %}">
+            <h3>Module 03 &middot; Student Registration</h3>
+            <p>Full CRUD (Create, Read, Update, Delete) student registration backed by SQLite.</p>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
