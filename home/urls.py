@@ -3,8 +3,8 @@ from . import views
 
 urlpatterns = [
     path(
-        "dynamic-form/",
-        views.dynamic_form,
-        name="dynamic_form"
+        "studentform/",
+        views.student_form,
+        name="dynamic_form",
     ),
 ]

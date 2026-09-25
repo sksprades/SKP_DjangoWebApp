@@ -1,32 +1,25 @@
-{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{% if student %}Edit Student{% else %}Register Student{% endif %}</title>
-<link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Student Registration</title>
 </head>
 <body>
 
-<nav class="topnav">
-    <span class="brand">SKP_DjangoWebApp</span>
-    <a href="{% url 'index' %}">Home</a>
-    <a href="{% url 'dynamic_form' %}">Dynamic Form</a>
-    <a href="{% url 'student_list' %}">Student Registration</a>
-</nav>
-
-<div class="container">
-    <h1>{% if student %}Edit Student{% else %}Register Student{% endif %}</h1>
+    <h1>Student Registration</h1>
 
     <form method="post">
         {% csrf_token %}
+
         {{ form.as_p }}
-        <button type="submit">Save</button>
+
+        <button type="submit">
+            Save
+        </button>
     </form>
 
-    <a class="back-link" href="{% url 'student_list' %}">&larr; Back to Student List</a>
-</div>
+    <a href="{% url 'student_list' %}">
+        Back to Student List
+    </a>
 
 </body>
 </html>
